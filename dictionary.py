@@ -13,9 +13,9 @@ class Dictionary:
             if self == i.p_aliena:
                 print(i.p_ita)
 
-    def translateWordWildCard(self,parola):
+    def translateWordWildCard(self,parola): # prendi in input una parola e sostituisce "?" con tutte le lettere per trovare la traduzione
         self.parola = parola
-        for i in parola.split():
+        for i in parola.split(): #controllo sulle lettere della parola per trovare il "?"
             val = True
             while i != "?" and val == True:
                 for lettera in alfabeto:
@@ -73,8 +73,9 @@ elif inp == "2":
         raise KeyError("Devono essere presenti solo lettere alfabetiche!!!")
     Dictionary.translate(word)
 
-elif inp == "3":
-    Dictionary.translateWordWildCard("a?a")
+elif inp == "3": #inserisco word (parola con "?") e invoca la funzione per cercare la traduzione
+    word = input("Ok, quale parola devo tradurre?\n")
+    Dictionary.translateWordWildCard(word)
 
 elif inp == "4":
     for i in dizionario:
