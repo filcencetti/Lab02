@@ -16,17 +16,17 @@ class Translator:
         pass
 
     def loadDictionary(self, dict):
-        dizionario_1 = {}
+        diz =  {}
         for line in open(dict,"r"):
-            dizionario_1[line.split(" ")[0]] = line.split(" ")[1:]
-        return dizionario_1
+            diz.update({line.split(" ")[0] : line.split(" ")[1:]})
+        Dictionary.aggiorna_dizionario(diz)
 
     def handleAdd(self, entry):
         self.entry = entry
-        dizionario_2 = {}
         i = self.entry.split(" ")
-        dizionario_2[i[0]] = i[1:]
-        Dictionary.addWord(dizionario_2)
+        tupla = (i[0], i[1:])
+        Dictionary.addWord(tupla)
+
         # entry is a tuple <parola_aliena> <traduzione1 traduzione2 ...>
         pass
 
