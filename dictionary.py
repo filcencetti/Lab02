@@ -3,8 +3,8 @@ class Dictionary:
         self.lista_dizionario = {}
         pass
 
-    def aggiorna_dizionario(self,dizionario):
-        self.lista_dizionario = dizionario
+    def aggiorna_dizionario(self,dizio):
+        self.lista_dizionario = dizio
         pass
 
     def addWord(self,tupla):

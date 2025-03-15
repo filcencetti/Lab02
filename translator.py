@@ -2,6 +2,7 @@ from dictionary import Dictionary
 class Translator:
 
     def __init__(self):
+        self.dizionario = Dictionary()
         pass
 
     def printMenu(self):
@@ -19,13 +20,13 @@ class Translator:
         diz =  {}
         for line in open(dict,"r"):
             diz.update({line.split(" ")[0] : line.split(" ")[1:]})
-        Dictionary.aggiorna_dizionario(diz)
+        self.dizionario.aggiorna_dizionario(diz)
 
     def handleAdd(self, entry):
         self.entry = entry
         i = self.entry.split(" ")
         tupla = (i[0], i[1:])
-        Dictionary.addWord(tupla)
+        self.dizionario.addWord(tupla)
 
         # entry is a tuple <parola_aliena> <traduzione1 traduzione2 ...>
         pass
